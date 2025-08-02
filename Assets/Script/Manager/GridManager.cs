@@ -18,7 +18,6 @@ namespace Script
         {
             // cam.transform.position = new Vector3((float)(width-1) / 2, (float)(height-1) / 2, -10);
             InitCamera();
-            GenerateGrid();
         }
 
         /// <summary>
@@ -41,6 +40,8 @@ namespace Script
                     tiles[new Vector3(x, y, 0)] = spawnedTile;
                 }
             }
+            
+            GameManager.instance.ChangeState(GameState.SpawnPlayer);
         }
 
         /// <summary>
