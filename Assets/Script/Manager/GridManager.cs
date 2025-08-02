@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using Script.Base;
+using Script.Tiles;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-namespace Script
+namespace Script.Manager
 {
     public class GridManager : SingletonBase<GridManager>
     {

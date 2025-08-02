@@ -1,8 +1,6 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Script
+namespace Script.Tiles
 {
     public abstract class Tile : MonoBehaviour
     {

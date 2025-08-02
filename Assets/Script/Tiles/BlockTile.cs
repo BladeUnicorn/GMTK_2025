@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Script;
-using UnityEngine;
-
-public class BlockTile : Tile
+namespace Script.Tiles
 {
+    public class BlockTile : Tile
+    {
     
+    }
 }
