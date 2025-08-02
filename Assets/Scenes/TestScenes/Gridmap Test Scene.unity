@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -154,7 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 32
   height: 18
-  tilePrefab: {fileID: 7012309415370004463, guid: fdab2423747c59d409e7196393fdc88d, type: 3}
+  grassTile: {fileID: 8714660273017049590, guid: 6f0bdbf3343032f42a59a35691e54d83, type: 3}
+  blockTile: {fileID: 3224875208000018675, guid: 1d6643df513118a4d805028f05a65c9a, type: 3}
   cam: {fileID: 1298794708}
 --- !u!4 &297825753
 Transform:
