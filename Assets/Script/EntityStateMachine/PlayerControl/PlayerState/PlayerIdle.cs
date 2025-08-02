@@ -15,6 +15,8 @@ namespace Script.PlayerControl.PlayerState
         public override void OnEnter()
         {
             base.OnEnter();
+            
+            player.SetZeroVelocity();
         }
 
         public override void OnUpdate()

@@ -11,7 +11,16 @@ namespace Script.Manager
     
     public class GameManager : SingletonBase<GameManager>
     {
-        private GameState currentGameState;
+        public GameState currentGameState { get; private set; }
+        //新输入系统
+        public InputActions inputActions { get; private set; }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            inputActions = new InputActions();
+        }
 
         private void Start()
         {
@@ -33,6 +42,15 @@ namespace Script.Manager
                         "Argument out of range exception");
             }
         }
-        
+
+        private void OnEnable()
+        {
+            inputActions.Enable();
+        }
+
+        private void OnDisable()
+        {
+            inputActions.Disable();
+        }
     }
 }
