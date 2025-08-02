@@ -1,13 +1,15 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Script
 {
     public class GridManager : SingletonBase<GridManager>
     {
         [SerializeField] private int width, height;
-        [SerializeField] private Tile tilePrefab;
+        [SerializeField] private Tile grassTile;
+        [SerializeField] private Tile blockTile;
         private Dictionary<Vector3,Tile> tiles = new Dictionary<Vector3, Tile>(); 
         
         [SerializeField] private Transform cam;
@@ -28,14 +30,14 @@ namespace Script
             {
                 for (int y = 0; y < height; y++)
                 {
-                    var spawnedTile = Instantiate(tilePrefab,new Vector3(x,y),Quaternion.identity);
+                    var ramdomTile = Random.Range(0, 6) == 3 ? blockTile : grassTile;
+                    var spawnedTile = Instantiate(ramdomTile,new Vector3(x,y),Quaternion.identity);
                     spawnedTile.name = $"Tile {x} {y}";
-                    //对瓦片分组
-                    bool b_isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
                     
                     //执行瓦片的初始化函数
-                    spawnedTile.Init(b_isOffset);
-
+                    spawnedTile.Init(x,y);
+                    
+                    //存储瓦片
                     tiles[new Vector3(x, y, 0)] = spawnedTile;
                 }
             }
