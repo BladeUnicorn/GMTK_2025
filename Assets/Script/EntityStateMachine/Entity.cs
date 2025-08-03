@@ -124,11 +124,13 @@ namespace Script.StateMachine
         {
             if (Mathf.Abs(inputMoveVec2_X) == 1)
             {
+                FlipController(inputMoveVec2_X,0);
                 Vector3 target = transform.position + new Vector3(inputMoveVec2_X, 0, 0);
                 StartCoroutine(MoveToPosition(target));
             }
             else if (Mathf.Abs(inputMoveVec2_Y) == 1)
             {
+                // FlipController(0,inputMoveVec2_Y);  //需要上下翻转再加这句
                 Vector3 target = transform.position + new Vector3(0, inputMoveVec2_Y, 0);
                 StartCoroutine(MoveToPosition(target));
             }
