@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Script;
-using UnityEngine;
-
-public class BlockTile : Tile
+namespace Script.Tiles
 {
-    
+    public class BlockTile : Tile
+    {
+        public override void Init(int _x, int _y)
+        {
+            base.Init(_x, _y);
+        }
+    }
 }

@@ -1,7 +1,7 @@
 using System;
-using UnityEngine;
+using Script.Base;
 
-namespace Script
+namespace Script.Manager
 {
     public enum GameState
     {
@@ -11,7 +11,16 @@ namespace Script
     
     public class GameManager : SingletonBase<GameManager>
     {
-        private GameState currentGameState;
+        public GameState currentGameState { get; private set; }
+        // //新输入系统
+        // public InputSystem_Actions inputSystem { get; private set; }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            // inputSystem = new InputSystem_Actions();
+        }
 
         private void Start()
         {
@@ -33,6 +42,15 @@ namespace Script
                         "Argument out of range exception");
             }
         }
-        
+
+        // private void OnEnable()
+        // {
+        //     inputSystem.Enable();
+        // }
+        //
+        // private void OnDisable()
+        // {
+        //     inputSystem.Disable();
+        // }
     }
 }

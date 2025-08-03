@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Script
+namespace Script.Base
 {
     /// <summary>
     /// 单例基类
