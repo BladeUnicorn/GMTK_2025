@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Script.Base;
 using Script.Tiles;
 using UnityEngine;
@@ -54,6 +55,11 @@ namespace Script.Manager
             
             cam.transform.position = mapCenter + new Vector3(0, -4.5f, -6f);
             cam.transform.rotation = Quaternion.Euler(-30, 0, 0);
+        }
+
+        public Tile GetPlayerSpawnTile()
+        {
+            return tiles.Where(t => t.Key.x < width / 2).OrderBy(t => Random.value).First().Value;
         }
 
         #region Tile API
