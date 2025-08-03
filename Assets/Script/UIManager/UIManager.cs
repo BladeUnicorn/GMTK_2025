@@ -267,4 +267,5 @@ public class UIManager : MonoBehaviour
     {
         HideAllPanels(true);
     }
+    
 }
