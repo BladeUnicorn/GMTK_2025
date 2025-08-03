@@ -1,3 +1,4 @@
+using Script.Manager;
 using UnityEngine;
 
 namespace Script.StateMachine
@@ -10,7 +11,7 @@ namespace Script.StateMachine
         //状态机相关
         protected Machine machine;
         protected Entity entity;
-        private string animBoolName;
+        private string animBoolName; 
         
         //通用计时器
         protected float stateTimer;

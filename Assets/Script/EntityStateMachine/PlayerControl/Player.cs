@@ -13,6 +13,7 @@ namespace Script.PlayerControl
         
         public Machine machine { get; private set; }
         public PlayerIdle idleState { get; private set; }
+        public PlayerWalk walkState { get; private set; }
         
         #endregion
 
@@ -22,6 +23,7 @@ namespace Script.PlayerControl
             
             machine = new Machine();
             idleState = new PlayerIdle(this, machine, "Idle", this);
+            walkState = new PlayerWalk(this,machine, "Walk", this);
         }
 
         protected override void Start()

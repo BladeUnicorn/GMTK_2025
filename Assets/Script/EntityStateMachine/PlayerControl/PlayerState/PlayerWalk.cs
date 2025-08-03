@@ -14,11 +14,18 @@ namespace Script.PlayerControl.PlayerState
         public override void OnEnter()
         {
             base.OnEnter();
+            
         }
 
         public override void OnUpdate()
         {
             base.OnUpdate();
+            
+            player.DiscreteMovement();
+            
+            //->Idle
+            if(player.inputMoveVec2.magnitude == 0)
+                machine.ChangeState(player.idleState);
         }
 
         public override void OnExit()

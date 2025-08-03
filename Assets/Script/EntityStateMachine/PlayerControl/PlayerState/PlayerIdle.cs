@@ -22,6 +22,11 @@ namespace Script.PlayerControl.PlayerState
         public override void OnUpdate()
         {
             base.OnUpdate();
+
+            if (player.inputMoveVec2.magnitude != 0)
+            {
+                machine.ChangeState(player.walkState);
+            }
         }
 
         public override void OnExit()

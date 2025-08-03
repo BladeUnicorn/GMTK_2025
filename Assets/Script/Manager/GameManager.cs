@@ -12,14 +12,14 @@ namespace Script.Manager
     public class GameManager : SingletonBase<GameManager>
     {
         public GameState currentGameState { get; private set; }
-        //新输入系统
-        public InputActions inputActions { get; private set; }
+        // //新输入系统
+        // public InputSystem_Actions inputSystem { get; private set; }
 
         protected override void Awake()
         {
             base.Awake();
             
-            inputActions = new InputActions();
+            // inputSystem = new InputSystem_Actions();
         }
 
         private void Start()
@@ -43,14 +43,14 @@ namespace Script.Manager
             }
         }
 
-        private void OnEnable()
-        {
-            inputActions.Enable();
-        }
-
-        private void OnDisable()
-        {
-            inputActions.Disable();
-        }
+        // private void OnEnable()
+        // {
+        //     inputSystem.Enable();
+        // }
+        //
+        // private void OnDisable()
+        // {
+        //     inputSystem.Disable();
+        // }
     }
 }
